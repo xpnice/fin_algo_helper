@@ -1,16 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import { ConfigProvider } from "antd";
+
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./pages/index";
+import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
+  <ConfigProvider
+  // 个性化antd组件样式
+    theme={{
+      token: {
+        // colorPrimary: "#00b96b"
+      },
+    }}
+  >
     <App />
-  </React.StrictMode>
+  </ConfigProvider>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
