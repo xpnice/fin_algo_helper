@@ -1,0 +1,9 @@
+.custom-table .ant-table-cell {
+  padding: 8px 16px !important; /* 调整表格单元格的内边距 */
+  font-size: 12px; /* 调整字体大小 */
+  /* height: 8px !important; */
+}
+
+.custom-table .ant-table-row {
+  height: 16px !important; /* 调整行高 */
+}

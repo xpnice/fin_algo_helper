@@ -1,0 +1,3 @@
+interface LogisticRegressionPropsType {
+    next: () => void;
+  }

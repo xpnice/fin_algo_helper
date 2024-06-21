@@ -9,7 +9,7 @@ import axios, {
 
 // 初始化axios实例
 const request = axios.create({
-  baseURL: "http://119.8.26.109:8080",
+  baseURL: "http://msp23050s1.cs.hku.hk:8080",
   timeout: 5000,
   headers: {
     "Content-Type": "application/json;charset=utf-8",

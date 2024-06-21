@@ -60,7 +60,7 @@ const calculateMD5 = (file: File): Promise<string> => {
   });
 };
 
-const Tuning: React.FC<LinearRegressionPropsType> = ({ next }) => {
+const Tuning: React.FC<LogisticRegressionPropsType> = ({ next }) => {
   const [form] = Form.useForm();
 
   const [allFeatures, setAllfeatures] = useState<string[]>([]);
@@ -70,10 +70,11 @@ const Tuning: React.FC<LinearRegressionPropsType> = ({ next }) => {
 
   const onFinish = async (value: LRTRainPropsType) => {
     setSubmiting(true);
+
     try {
       await LRTrain(Object.assign({}, { ...value, md5: MD5 }));
     } catch (error: any) {
-      // message.error(error);
+      message.error(error);
     }
     setSubmiting(false);
     next();

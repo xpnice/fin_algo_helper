@@ -13,7 +13,7 @@ const getHoverColors = (colors: string[]) =>
 const getActiveColors = (colors: string[]) =>
   colors.map((color) => new TinyColor(color).darken(5).toString());
 
-const LinearRegressionDescription: React.FC<LinearRegressionPropsType> = ({
+const LogisticRegressionDescription: React.FC<LogisticRegressionPropsType> = ({
   next,
 }) => {
   return (
@@ -27,43 +27,41 @@ const LinearRegressionDescription: React.FC<LinearRegressionPropsType> = ({
         }}
       >
         <Paragraph>
-          <Text strong> Logistic regression </Text>
-          is a statistical method used to model the probability of a certain
-          class or event existing such as pass/fail, win/lose, alive/dead or
-          healthy/sick. It is a type of regression analysis used for predicting
-          the outcome of a categorical dependent variable based on one or more
-          predictor variables.
+          <Text strong> Logistic Regresion </Text>
+          is a statistical method used to analyze the relationship between the
+          dependent variable and one or more independent variables. The basic
+          principle is to establish a mathematical model by assuming a linear
+          relationship between the dependent variable and the independent
+          variable. This linear model can be represented as the dependent
+          variable being equal to the weighted sum of the independent variables
+          plus a constant term and an error term.
         </Paragraph>
         <Paragraph>
-          The logistic model can be represented by a logistic function which
-          maps the predicted values to probabilities. The logistic function is
-          defined as the natural logarithm of the odds that the dependent
-          variable is a success, also known as the logit function.
+          Once the model is established, it needs to be evaluated. The commonly
+          used evaluation metric is mean squared error (MSE), which represents
+          the average of the sum of squared errors between predicted and actual
+          values;
         </Paragraph>
         <Paragraph>
-          The training process of logistic regression involves optimizing the
-          parameters of the model to maximize the likelihood of the observed
-          data. This is typically done using a method called maximum likelihood
-          estimation (MLE).
+          The training process of Logistic Regresion is divided into two stages:
+          forward propagation and backward propagation.
         </Paragraph>
         <Paragraph>
-          In the forward propagation stage, the predicted probability is
-          calculated based on the current regression coefficients. The loss is
-          then calculated using a loss function such as binary cross-entropy.
+          In the forward propagation stage, the predicted value is calculated
+          based on the current regression coefficient, and then the loss is
+          calculated based on this predicted value and the given true value.
         </Paragraph>
         <Paragraph>
-          In the backpropagation stage, the gradient of the loss function with
-          respect to the regression coefficients is calculated. The regression
-          coefficients are then updated using optimization algorithms like
-          stochastic gradient descent (SGD).
+          In the backpropagation stage, calculate the gradient of the loss
+          function on the regression coefficients, and then use the method of
+          stochastic gradient descent (SGD) to update the regression
+          coefficients.
         </Paragraph>
         <Paragraph>
-          The training process is repeated for multiple epochs until the loss
-          converges to a certain range or the preset number of epochs is
-          reached.
+          Each epoch will repeat the above process until the loss converges to a
+          certain range or reaches the preset number of epochs.
         </Paragraph>
       </ConfigProvider>
-
       <ConfigProvider
         theme={{
           components: {
@@ -90,4 +88,4 @@ const LinearRegressionDescription: React.FC<LinearRegressionPropsType> = ({
   );
 };
 
-export default LinearRegressionDescription;
+export default LogisticRegressionDescription;

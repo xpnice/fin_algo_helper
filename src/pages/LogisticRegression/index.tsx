@@ -6,9 +6,9 @@ import { Button, message, } from "antd";
 
 import Tuning from "./components/Tuning";
 import CollisionAlert from "./components/Training";
-import LinearRegressionDescription from "./components/introduction";
+import LogisticRegressionDescription from "./components/introduction";
 
-const LinearRegression: React.FC = () => {
+const LogisticRegression: React.FC = () => {
   const { token } = theme.useToken();
   const [current, setCurrent] = useState(0);
 
@@ -23,7 +23,7 @@ const LinearRegression: React.FC = () => {
   const steps = [
     {
       title: "Introduction",
-      content: <LinearRegressionDescription next={next}/>,
+      content: <LogisticRegressionDescription next={next}/>,
     },
     {
       title: "Tuning Hyperparameters",
@@ -80,4 +80,4 @@ const LinearRegression: React.FC = () => {
   );
 };
 
-export default LinearRegression;
+export default LogisticRegression;

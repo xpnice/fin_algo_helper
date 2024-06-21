@@ -6,7 +6,7 @@ import { Table } from "antd";
 import ReactECharts from "echarts-for-react";
 import "./index.css"; // 引入自定义样式
 
-const LinearRegressionTrain: React.FC = () => {
+const LogisticRegressionTrain: React.FC = () => {
   const [socket, setWebSocket] = useState<Socket | null>(null);
 
   const [epochDataList, setEpochDataList] = useState<EpochData[]>([]);
@@ -18,8 +18,8 @@ const LinearRegressionTrain: React.FC = () => {
   const initWebSocket = useCallback(() => {
     if (!socket) return;
     socket.on("connect", () => {
-      console.log("Linear Regression, WebSocket Connected!!!", socket);
-      socket.emit("hello", "hello");
+      console.log("Logistic Regresion, WebSocket Connected!!!", socket);
+      socket.emit("epochData", "hello");
     });
     socket.on("epochData", (message: EpochData) => {
       console.log("收到信息:", message);
@@ -180,4 +180,4 @@ const LinearRegressionTrain: React.FC = () => {
   );
 };
 
-export default LinearRegressionTrain;
+export default LogisticRegressionTrain;

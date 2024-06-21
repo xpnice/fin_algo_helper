@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import type { MenuProps } from "antd";
 import { Breadcrumb, Layout, Menu, theme, Empty } from "antd";
 import LinearRegression from "../LinearRegression";
+import LogisticRegression from "../LogisticRegression";
 import { parseSubString } from "../../utils/general";
 
 const { Header, Content, Sider } = Layout;
@@ -27,7 +28,7 @@ const SIDER_ML_ITEM_LABELS = {
 };
 
 // 组件枚举
-const CONTENT_PAGES = [[<LinearRegression />]];
+const CONTENT_PAGES = [[<LinearRegression />, <LogisticRegression />]];
 
 // 初始化顶部导航数据结构
 const navItems: MenuProps["items"] = NAV_ITEM_LABELS.map((key, index) => ({
