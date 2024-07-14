@@ -1,0 +1,3 @@
+interface LinearRegressionPropsType {
+    next: () => void;
+  }

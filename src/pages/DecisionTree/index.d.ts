@@ -1,0 +1,3 @@
+interface DecisionTreePropsType {
+    next: () => void;
+  }
